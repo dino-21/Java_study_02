@@ -17,8 +17,8 @@ public class ListSearchComparision {
         
         // ArrayList와 LinkedList 생성
         List<Integer> arrayList = new ArrayList<>(size); //배열기반이라 빠름 get(index)
-        List<Integer> linkedList = new Vector<>();  //배열기반이라 빠름 get(index)
-        //List<Integer> linkedList = new LinkedList<>();  // LinkedList가 시간이 오래걸림, 노드 순회하느라 느림, 시간걸림
+        // List<Integer> linkedList = new Vector<>();  //배열기반이라 빠름 get(index)
+        List<Integer> linkedList = new LinkedList<>();  // LinkedList가 시간이 오래걸림, 노드 순회하느라 느림, 시간걸림
 
         
         

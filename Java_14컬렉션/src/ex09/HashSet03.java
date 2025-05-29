@@ -17,9 +17,27 @@ class Num{
 //		return   num + ""; // 10 + "" => "10"
 		return String.valueOf(num); //10 => "10"
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(num);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Num other = (Num) obj;
+		return num == other.num;
+	}
 	
 	
     //해시코드 작성
+	
 
 
 	

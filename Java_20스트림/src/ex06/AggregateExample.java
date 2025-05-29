@@ -7,7 +7,7 @@ public class AggregateExample {
 
 	public static void main(String[] args) {
 		
-		int[] arr = {};
+		int[] arr = {1,2,3,4,5};
 		
 		long count = Arrays.stream(arr)
 				.filter(n -> n%2==0)

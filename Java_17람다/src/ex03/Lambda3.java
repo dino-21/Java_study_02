@@ -9,7 +9,7 @@ package ex03;
 */
 
 
-//@FunctionalInterface //함수형 인터페이스
+@FunctionalInterface //함수형 인터페이스
 interface Printable{
 	void print(String msg);
     
