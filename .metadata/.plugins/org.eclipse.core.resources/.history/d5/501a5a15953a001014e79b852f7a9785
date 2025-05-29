@@ -1,0 +1,20 @@
+package ex08;
+
+import ex01.Account;
+
+public class SingletonExample {
+
+	public static void main(String[] args) {
+		
+		Account ac = new Account();
+		Account ac2 = new Account();
+		System.out.println(ac == ac2);
+		//외부에서는 Singleton.getInstance()만 호출 가능
+		// 이 메서드는 항상 같은 객체를 반환
+		Singleton s1 = Singleton.getInstance();
+		Singleton s2 = Singleton.getInstance();
+		
+		System.out.println(s1 == s2);
+	}
+
+}

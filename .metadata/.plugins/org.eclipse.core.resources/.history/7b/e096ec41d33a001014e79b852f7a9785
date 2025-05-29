@@ -1,0 +1,46 @@
+package ex07;
+
+class Box<T> { 
+	private T obj;
+
+	public T getObj() { return obj;	}
+	public void setObj(T obj) { this.obj = obj;	}
+}
+
+class BoxFactory{
+	//제네릭메소드
+    /*
+	<T> 제네릭 타입 메서드
+	Box<T> 반환타입 : Box<T> Box안에 T 타입만 올수있음
+	markBox 메서드 이름
+	(T o) 매개변수 : T타입의 매개변수 o
+	*/
+	public static <T> Box<T> markBox(T o){
+		Box<T> box = new Box<T>();
+		box.setObj(o);
+		return box;
+	}
+}
+
+/*
+ * public static <String> Box<String> markBox(String o){
+		Box<String> box = new Box<String>();
+		box.setObj(o);
+		return box;
+	}
+ */
+public class 제네릭메소드01 {
+
+	public static void main(String[] args) {
+		
+		Box<String> sBox = BoxFactory.markBox("Sweet");
+		String str = sBox.getObj();
+		System.out.println(str);
+//		System.out.println(sBox.getObj());
+		
+		Box<Integer> iBox = BoxFactory.markBox(10);
+		System.out.println(iBox.getObj());
+
+	}
+
+}

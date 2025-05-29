@@ -1,0 +1,50 @@
+package ex03_set;
+
+import java.util.HashSet;
+import java.util.Set;
+
+
+class Person{
+	private int age;
+	
+	public Person(int age) {
+		this.age = age;
+	}
+
+	@Override
+	public String toString() {
+		return "Person [age=" + age + "]";
+	}
+	
+	@Override  
+	public int hashCode() {
+//		return age % 3;
+		return Integer.hashCode(age); //나이(age)가 같으면 중복으로 본다.
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+//		Person p = (Person)obj;
+		return  this.age == ((Person)obj).age;
+	}
+}
+public class set03 {
+
+	public static void main(String[] args) {
+		/* 
+		 * HashSet에서 사용자 정의 객체(Person)를 저장할 때
+		  중복 판단을 어떻게 할 것인지 보여주는 예제
+		 */
+		Set<Person> set = new HashSet<>();
+		
+		set.add(new Person(10));
+		set.add(new Person(20));
+		set.add(new Person(10));
+		set.add(new Person(20));
+		set.add(new Person(50));
+		
+		for(Person person : set)
+			System.out.println(person);
+	}
+
+}

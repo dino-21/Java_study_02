@@ -1,0 +1,60 @@
+package ex11;
+
+class A{}
+class B extends A{}
+class C extends B{}
+
+class Box<T> { 
+	private T obj;
+
+	public T getObj() { return obj;	}
+	public void setObj(T obj) { this.obj = obj;	}
+	@Override
+	public String toString() {
+		return obj.toString();
+	}
+}
+
+class BoxFactory{
+	// 상한 제한 와일드카드: Box<B>, Box<C>만 전달 가능
+	// 전달된 상자는 B 또는 B의 하위 타입이 들어있는 상자임
+	// 다만 정확한 타입은 모르므로 값을 넣는 것은 금지됨 (set 불가)
+	// 최소한 B 타입 이상이라는 것은 보장되므로 값을 꺼내는 건 가능 (get 가능)
+	public static void peekBox(Box<? extends B> box) {		//Box<? extends B>  읽기만 가능
+		System.out.println(box);
+		box.getObj();  // 최소 B 라는 것이 보장, 읽기만 가능
+//		box.setObj(new C()); // 박스 내부에 정확한 타입을 모르므로 위험
+	}
+}
+
+public class 상한제한와일드카드02 {
+
+	public static void main(String[] args) {
+
+		Box<A> a = new Box();
+		a.setObj(new A());
+		
+		Box<B> b = new Box();
+		b.setObj(new B());
+		
+		Box<C> c = new Box();
+		c.setObj(new C());
+		
+		
+//		BoxFactory.peekBox(a);  //A는 B보다 상위 타입이므로 전달 불가
+		BoxFactory.peekBox(b);
+		BoxFactory.peekBox(c);
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+

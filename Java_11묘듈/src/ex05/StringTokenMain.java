@@ -1,0 +1,33 @@
+package ex05;
+
+import java.util.StringTokenizer;
+
+public class StringTokenMain {
+
+	public static void main(String[] args) {
+
+		String data = "홍길동&이수홍,박연수";
+		// split("&|,") → 정규표현식으로 여러 구분자 분리
+		String[] arr = data.split("&|,");
+
+		System.out.println(data);
+
+		for (String str : arr)
+			System.out.println(str);
+
+		System.out.println();
+
+		String data2 = "홍길동&이수홍|박연수";
+
+		// StringTokenizer는 여러 구분자를 문자 단위로 나눔,
+		// 문자열 data2 안에 /, &, | 중 하나라도 나오면 그 문자를 기준으로 나눠라는 뜻
+		StringTokenizer st = new StringTokenizer(data2, "/&|");
+
+		while (st.hasMoreElements()) {
+			String str = st.nextToken();
+			System.out.println(str);
+		}
+
+	}
+
+}

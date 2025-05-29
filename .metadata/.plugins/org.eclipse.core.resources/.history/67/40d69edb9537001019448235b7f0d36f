@@ -1,0 +1,41 @@
+package ex01;
+
+public class Conversion01 {
+	public static void main(String[] args) {
+		double d;
+
+		int sum = 100;
+		d = sum;
+		System.out.println(d);
+		System.out.println(sum);
+
+		System.out.println("-------");
+		short s1 = 32000;
+		int i1;
+		i1 = s1;
+		System.out.println(s1);
+		System.out.println(i1);
+
+		int i2 = 32000;
+		short s2;
+		s2 = (short) i2;
+		System.out.println(i2);
+		System.out.println(s2);
+
+		int i3 = 50000;     //int -2,147,483,648에서 2,147,483,647까지의 정수를 저장
+		short s3 = (short) i3;  //short -32,768에서 32,767까지의 정수를 저장
+		System.out.println(i3);
+		System.out.println(s3);
+
+		System.out.println("----------");
+		// 오버플로우: 계량기처럼 값이 최대 범위를 넘으면 다시 처음으로 돌아감
+		byte b = (byte)128;  //1 byte -128에서 127까지의 정수를 저장,  128은 범위를 넘어서 오버플로우 발생
+		System.out.println(b);
+		
+		// 언더플로우: 너무 작은 값도 반대로 한 바퀴 돌아 양수로 바뀜
+		System.out.println("----------");
+		byte b2 = (byte)-129;  //1 byte -128에서 127까지의 정수를 저장
+		System.out.println(b2);
+	}
+
+}

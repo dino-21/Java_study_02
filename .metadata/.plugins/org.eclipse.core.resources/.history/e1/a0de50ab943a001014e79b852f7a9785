@@ -1,0 +1,13 @@
+package ex08;
+
+public class Singleton {
+	//싱글톤(Singleton) 패턴
+	private static Singleton singleton = new Singleton();
+	
+	private Singleton() {
+	}
+	
+	public static Singleton getInstance() {
+		return singleton;
+	}
+}

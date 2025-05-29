@@ -1,0 +1,61 @@
+package ex03_set;
+
+import java.util.HashSet;
+import java.util.Set;
+
+/* HashSet에 한 번만 저장되도록 equals()와 hashCode()를 재정의
+ * HashSet에서 사용자 정의 객체를 저장할 때, 중복 기준을 만들고 싶다면 
+ * equals()와 hashCode()를 반드시 재정의해야 한다.
+ */
+class Person {
+	private int age;
+
+	public Person(int age) {
+		this.age = age;
+	}
+
+	@Override
+	public String toString() {
+		return "Person [age=" + age + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		/* 나이를 3으로 나눈 나머지 값을 해시코드로 사용하겠다는 뜻
+		* 서로 다른 나이지만 같은 hashCode를 가질 수 있다.
+		*/
+		// return age % 3;
+		
+		// 나이 기준으로 해시코드 생성 → age가 같으면 같은 해시값
+		// 나이(age)가 같으면 중복으로 본다.
+		return Integer.hashCode(age);
+	}
+
+	@Override // 나이가 같으면 같은 객체로 판단
+	public boolean equals(Object obj) {
+//		Person p = (Person)obj;
+		return this.age == ((Person) obj).age;
+	}
+}
+
+public class set03 {
+
+	public static void main(String[] args) {
+		/*
+		 * HashSet에서 사용자 정의 객체(Person)를 저장할 때 중복 판단을 어떻게 할 것인지 보여주는 예제
+		 * 
+		 * 
+		 */
+		Set<Person> set = new HashSet<>();
+
+		set.add(new Person(10));
+		set.add(new Person(20));
+		set.add(new Person(10));
+		set.add(new Person(20));
+		set.add(new Person(50));
+
+		for (Person person : set)
+			System.out.println(person);
+	}
+
+}

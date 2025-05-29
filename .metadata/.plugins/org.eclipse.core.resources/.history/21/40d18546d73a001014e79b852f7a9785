@@ -1,0 +1,59 @@
+package ex09;
+
+class Box<T> { 
+	private T obj;
+
+	public T getObj() { return obj;	}
+	
+	// 매개변수로 T 타입 값을 반드시 전달해야 함 (null도 가능)
+	public void setObj(T obj) { this.obj = obj;	}
+	
+	
+	@Override
+	public String toString() {
+		return obj.toString(); // obj가 null이 아닌 경우 문자열 반환
+	}
+}
+
+class BoxFactory{
+	// 제네릭 타입
+	// 제네릭 메소드: 전달받은 Box<T>에서 값을 꺼내 T 타입으로 반환
+	public static <T> T openBox(Box<T> box){
+		return box.getObj();
+	}
+	
+	//? => 와일드 카드
+	// 와일드카드 사용: 어떤 타입의 Box든 받아서 내부 객체를 출력만 가능 (읽기 전용)
+//	public static <T> void peekBox(Box<T> box) {
+	public static void peekBox(Box<?> box) {
+		System.out.println(box);
+	}
+}
+
+public class 와일드카드01 {
+
+	public static void main(String[] args) {
+
+		Box<String> box = new Box();
+		box.setObj("Sweet");
+		BoxFactory.peekBox(box);
+		
+		System.out.println("----");
+		
+		Box<Integer> ibox = new Box();
+		//ibox.setObj(); // 인자값이 없으면 에러남
+		ibox.setObj(123);
+		BoxFactory.peekBox(ibox);
+	}
+
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+package ex08;
+
+public class Singleton {
+	// 싱글톤(Singleton) 패턴
+	// 자기 자신의 인스턴스를 private static으로 선언
+	// 클래스가 로딩되면서 단 하나의 인스턴스가 즉시 생성
+	private static Singleton singleton = new Singleton();
+
+	// 생성자를 private으로 막음 (외부에서 new로 생성 못하게)
+	private Singleton() {
+	}
+
+	// 유일한 인스턴스를 반환하는 공개된 정적 메서드 제공
+	public static Singleton getInstance() {
+		return singleton;
+	}
+}

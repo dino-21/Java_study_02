@@ -1,0 +1,23 @@
+package ex08;
+
+import java.util.*;
+
+public class TestPerson {
+    public static void main(String[] args) {
+        List<Person> list = new ArrayList<>();
+        list.add(new Person("유비"));
+        list.add(new Person("장비"));
+        list.add(new Person("관우"));
+
+        Collections.sort(list);  // compareTo 기준 정렬
+
+        for (Person p : list) {
+            System.out.println(p);
+        }
+
+        // equals() 확인
+        Person p1 = new Person("조조");
+        Person p2 = new Person("조조");
+        System.out.println("p1 equals p2? " + p1.equals(p2)); // true
+    }
+}
