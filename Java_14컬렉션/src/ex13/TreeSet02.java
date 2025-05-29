@@ -27,6 +27,12 @@ public class TreeSet02 {
 		
 		while(itr.hasNext())
 			System.out.println(itr.next());
+		
+		System.out.println("---");
+		
+		for (String s : set) {
+		    System.out.println(s);
+		}
 	}
 }
 

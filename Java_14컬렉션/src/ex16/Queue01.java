@@ -16,12 +16,12 @@ import java.util.concurrent.PriorityBlockingQueue;
 public class Queue01 {
 
 	public static void main(String[] args) {
-		
-		List<Integer> al = new ArrayList<Integer>();
-		List<Integer> ll = new LinkedList<Integer>();
-		Set<Integer> hs = new HashSet<Integer>();
-		Set<Integer> ts = new TreeSet<Integer>();
-		List<Integer> ck = new Stack<Integer>();
+		//인터페이스 ,             구현클래스
+		List<Integer> al = new ArrayList<Integer>();  //배열 기반 리스트, 빠른 조회
+		List<Integer> ll = new LinkedList<Integer>(); //연결 리스트 기반, 삽입/삭제 빠름
+		Set<Integer> hs = new HashSet<Integer>();   //순서 없음, 중복 제거
+		Set<Integer> ts = new TreeSet<Integer>();  //자동 정렬됨 (오름차순), 중복 제거
+		List<Integer> ck = new Stack<Integer>();  //후입선출(LIFO) 자료구조
 		
 		/*
 		 * Queue는 인터페이스이다. 따라서 객체 생성을 할 수 없다

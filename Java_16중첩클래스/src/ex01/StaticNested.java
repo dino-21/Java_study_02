@@ -8,6 +8,7 @@ class Outer{
 	static class Nested1{   //정적중첩클래스
 		void add(int n) { 
 			num +=n;
+			 //정적(static) 중첩 클래스는 바깥 클래스의 인스턴스 변수에 접근할 수 없다
 			// age =100; 이유?
 		}		
 	}
@@ -25,7 +26,7 @@ public class StaticNested {
 
 	public static void main(String[] args) {
 		
-		
+		// static class Nested1는 정적(static) 중첩 클래스 new해야 사용가능
 		Outer.Nested1 nest1 = new Outer.Nested1();
 		nest1.add(5);
 		
@@ -34,7 +35,7 @@ public class StaticNested {
 		System.out.println(nest2.get());
 		
 		System.out.println("------------------");
-		System.out.println(new Outer().getAge());
+		System.out.println(new Outer().getAge()); 
 		
 	}
 

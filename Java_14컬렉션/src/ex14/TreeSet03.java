@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.Vector;
-
+//우리가 직접 만든 객체이기 때문에 자바가 정렬만들어줘야함
 class Person implements Comparable<Person>{
 	private int age;
 	public Person(int age) { this.age = age; }

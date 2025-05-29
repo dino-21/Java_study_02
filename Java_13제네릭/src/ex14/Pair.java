@@ -1,5 +1,7 @@
 package ex14;
 
+
+//key, Map or Value
 public class Pair <K,M> {
 	private K first;
 	private M second;

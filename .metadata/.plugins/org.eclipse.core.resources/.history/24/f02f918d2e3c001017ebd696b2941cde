@@ -1,0 +1,38 @@
+package ex06;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+import java.util.Vector;
+
+public class ArrayList04 {
+
+	public static void main(String[] args) {
+		
+		//출력 => Iterator 일회용(책갈피), Iterator는 한 번 끝까지 가면 재사용이 불가능 
+		List<String> list = new ArrayList<String>();
+		
+		list.add("kor");
+		list.add("eng");
+		list.add("math");
+		list.add("com");
+		list.add("kor2");
+		
+		Iterator<String> itr = list.iterator();  //반복자 획득
+		
+		// Iterator는 내부적으로 현재 위치(cursor) 를 가지고 있어서, 한 번 순회가 끝나면 다시 처음으로 돌아갈 수 없음
+		while(itr.hasNext())   //hasNext() : 다음 요소가 있는지 확인
+			System.out.print(itr.next() + " "); //next() : 다음 요소 반환 및 커서 이동
+		System.out.println();
+		System.out.println("----------------------");
+		
+		itr = list.iterator();  //반복자 획득
+		 
+		while(itr.hasNext()) 
+			System.out.print(itr.next() + " ");
+	}
+
+}

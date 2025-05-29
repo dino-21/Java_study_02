@@ -11,7 +11,9 @@ class Papers{
 	
 	public Printable getPrinter() {
 				
-		//선언+생성  ---> 익명 클래스
+		//선언+생성  tmp(변수이름) ---> 익명 클래스  new Printable() { ... } → 익명 클래스의 객체  
+		// 중괄호 있으면 익명 클래스 {}
+		// 변수에 담음
 //		Printable tmp = new Printable() {
 //			@Override
 //			public void print() {
@@ -19,6 +21,8 @@ class Papers{
 //			}	
 //		};				
 		
+		
+		//바로 리턴
 		return new Printable() {
 				@Override
 				public void print() {

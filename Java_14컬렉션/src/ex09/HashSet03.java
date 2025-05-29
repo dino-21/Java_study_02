@@ -4,9 +4,10 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.Vector;
-
+//사용자 정의 클래스는 equals()와 hashCode()를 꼭 오버라이딩해야 
 class Num{
 	private int num;
 	public Num(int num) { this.num = num; }
@@ -16,6 +17,12 @@ class Num{
 //		return   num + ""; // 10 + "" => "10"
 		return String.valueOf(num); //10 => "10"
 	}
+	
+	
+    //해시코드 작성
+
+
+	
 }
 
 public class HashSet03 {

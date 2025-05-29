@@ -1,5 +1,9 @@
 package ex03;
 
+
+//SendMessage는 Network와 밀접하게 관련된 기능이므로, 외부로 뺄 필요 없이 내부에 묶어서 표현
+// 다른 클래스는 접근 못하가ㅔ - 캡슐화
+
 class Network{
 	
 	public void message(String content) {
