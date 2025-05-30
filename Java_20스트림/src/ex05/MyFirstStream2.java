@@ -36,12 +36,15 @@ public class MyFirstStream2 {
               .filter(n -> n % 2 == 0)
               .forEach(n -> System.out.print(n + " "));
         System.out.println();
-
-        // 4. 필터링된 짝수를 boxed()로 Integer로 변환
-        List<Integer> iList = Arrays.stream(arr)
+       
+        System.out.println("0000");
+        
+        
+        // 4. 필터링된 짝수를 boxed()로 Integer로 변환 
+        List<Integer> iList = Arrays.stream(arr)   // IntStream (int 타입 스트림)
                                     .filter(n -> n % 2 == 0)
-                                    .boxed()
-                                    .collect(Collectors.toList());
+                                    .boxed()  // int → Integer (Stream<Integer>)
+                                    .collect(Collectors.toList());  // 리스트로 수집
         System.out.println("짝수 리스트: " + iList);
 
         // 5. 리스트에 값 추가 및 제거
