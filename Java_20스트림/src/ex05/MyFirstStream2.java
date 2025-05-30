@@ -28,6 +28,9 @@ public class MyFirstStream2 {
 
         // 정수 배열 생성
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8};
+        
+        
+        //Integer[] arr = {1, 2, 3, 4};   .boxed() 할 필요가 없음
         System.out.println("원본 배열: " + Arrays.toString(arr));
 
         // 3. 짝수만 필터링 후 출력
@@ -37,7 +40,7 @@ public class MyFirstStream2 {
               .forEach(n -> System.out.print(n + " "));
         System.out.println();
        
-        System.out.println("0000");
+        System.out.println("=======");
         
         
         // 4. 필터링된 짝수를 boxed()로 Integer로 변환 
